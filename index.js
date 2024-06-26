@@ -22,6 +22,23 @@ const main = async () => {
   //     },
   //   });
 
+  // update user
+  // const updated_user = await prisma.user.update({
+  //   where: {
+  //     id: 4,
+  //   },
+  //   data: {
+  //     name: "doe2 updated",
+  //   },
+  // });
+
+  // delete user
+  // const deleted_user = await prisma.user.delete({
+  //   where: {
+  //     id: 3,
+  //   },
+  // });
+
   // get all users
   const users = await prisma.user.findMany({ include: { articles: true } });
   users.map((user) =>
