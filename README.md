@@ -1,8 +1,8 @@
-// install prisma
+// install prisma :
 npm i prisma
 
-// initialize prisma
+// initialize prisma :
 npx prisma init --datasource-provider sqlite
 
-// migrate the schemas defined
+// migrate the schemas defined :
 npx prisma migrate dev --name init

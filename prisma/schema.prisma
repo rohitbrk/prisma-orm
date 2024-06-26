@@ -19,6 +19,6 @@ articles Article[]
 model Article {
 id Int @id @default(autoincrement()) 
 title String @unique
-author User @relation(fields: [authorId], references: [id])
+author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
 authorId Int
 }

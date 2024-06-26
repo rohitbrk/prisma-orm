@@ -33,17 +33,23 @@ const main = async () => {
   // });
 
   // delete user
-  // const deleted_user = await prisma.user.delete({
-  //   where: {
-  //     id: 3,
-  //   },
-  // });
+  const deleted_user = await prisma.user.delete({
+    where: {
+      id: 2,
+    },
+  });
 
   // get all users
+  // const users = await prisma.user.findMany({ include: { articles: true } });
+  // users.map((user) =>
+  //   console.log(`name: ${user.name}; articles:${JSON.stringify(user.articles)}`)
+  // );
+
   const users = await prisma.user.findMany({ include: { articles: true } });
-  users.map((user) =>
-    console.log(`name: ${user.name}; articles:${JSON.stringify(user.articles)}`)
-  );
+  console.log(users);
+
+  const articles = await prisma.article.findMany({});
+  console.log(articles);
 
   // disconnect
   await prisma.$disconnect();
